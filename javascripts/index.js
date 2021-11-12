@@ -22,7 +22,6 @@ let main = ()=>{
                     sectionItem.className = sectionItem.className.concat(' ').concat(sectionItemClassName)
 
                     let selectedStyle = window.getComputedStyle(sectionItem)
-                    console.table(selectedStyle)
                     mainSection.style.height = parseInt(selectedStyle.lineHeight) + 'px';
                 }else if(includeClassSelectedName){
                     nItem.className = nItem.className.replace(navItemClassName, '')
