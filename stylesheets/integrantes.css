@@ -1,0 +1,166 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap');
+
+:root{
+    --dark-primary-color: #689f38;
+    --light-primary-color: #dcedc8;
+    --primary-color: #8bc34a;
+    --text-icons: #212121;
+    --accent-color: #9e9e9e;
+    --primary-text: #212121;
+    --secondary-text: #757575;
+    --divider-color: #bdbdbd;
+
+    --img-tree-background: url("../assets/tree_vector.png");
+    --img-leaf-nav-item: url("../assets/leaf.png");
+
+    --default-font: 'Poppins';
+}
+
+html{
+    min-height: 100vh;
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    margin: 0;
+    padding: 0;
+}
+
+body *{
+    font-family: 'Poppins';
+}
+
+.background-tree{
+    z-index: -1;
+    position: fixed;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    background: var(--img-tree-background) no-repeat;
+    background-size: 100% 100%;
+}
+
+.cards{
+    width: auto;
+    height: 100%;
+    margin: 5%;
+    padding: 1%;
+    display: flex;
+    flex-flow: column;
+    flex-basis: auto;
+    flex-wrap: wrap;
+}
+
+.card {
+    border: 1px solid;
+    display: grid;
+    grid-auto-flow: column;
+    margin-bottom: 100px;
+}
+
+.card img{
+    background-color: var(--primary-text);
+    padding: 50px;
+    margin: 50px;
+    width: 400px;
+    height: 400px;
+}
+
+.card h2{
+    width: 100%;
+    justify-content: center;
+    text-align: center;
+    align-self: center;
+    font-size: 4rem;
+}
+
+.card-info {
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+}
+
+.card-info p{
+    opacity: 0;
+    text-transform: capitalize;
+    text-align: justify;
+    margin-inline: 50px;
+    font-size: 1.5rem;
+    display: none;
+}
+
+.card:hover .card-info{
+    justify-content: normal;
+}
+
+.card:hover h2 {
+    animation: .2s move-card-info-h2 forwards;
+}
+
+.card:hover .text-to-appear{
+    display: flex;
+    animation: .2s see-card-info-p forwards;
+}
+
+.card:hover .card-img{
+    animation: .2s img-expand forwards;
+}
+
+@keyframes img-expand {
+    to{
+        opacity: 1;
+        width: 500px;
+        height: 500px;
+    }
+}
+
+@keyframes see-card-info-p {
+    to{
+        opacity: 1;
+    }
+}
+
+@keyframes move-card-info-h2 {
+    to{
+        opacity: 1;
+    }
+}
+
+@media screen and (max-width: 800px) {
+    .card{
+        display: grid;
+        grid-auto-flow: row;
+        border: none;
+    }
+
+    .card img{
+        background-color: var(--primary-text);
+        width: 500px;
+        height: 400px;
+    }
+
+
+    .card .card-info{
+        justify-content: normal;
+    }
+
+    .card h2 {
+        animation: .2s move-card-info-h2 forwards;
+    }
+
+    .card .text-to-appear{
+        display: flex;
+        animation: .2s see-card-info-p forwards;
+    }
+
+    .card .card-img{
+        animation: .2s img-expand forwards;
+    }
+
+}
